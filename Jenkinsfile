@@ -1,4 +1,6 @@
 @Library('slibDemo') _
+import com.org.deploy
+
 pipeline {
   agent any
   stages {
@@ -11,7 +13,8 @@ pipeline {
       steps {
         script {
           def commit = env.GIT_COMMIT
-          println(deploy.myData(commit))
+          def dp = new com.org.deploy()
+          println(dp.myData(commit))
         }      
       }
     }
