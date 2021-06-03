@@ -1,10 +1,8 @@
-@Library('slibDemo') import com.org.deploy
-def slibDemo = new deploy(this)
+@Library('slibDemo') _
 
 pipeline {
   agent any
   environment {
-            // Get the commit log
             commit = "${env.GIT_COMMIT}"
         }
   stages {
@@ -13,7 +11,7 @@ pipeline {
         welcome("Priyabrata Mohanty")
       }
     }
-    stage ("Test Shared Lib Class"){
+    stage ("Test Shared Lib Function"){
       steps {
         script {
           println("Current commit id is: \n" + env.commit)
