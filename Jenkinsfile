@@ -1,5 +1,5 @@
-@Library('slibDemo') _
-import com.org.deploy
+@Library('slibDemo') import com.org.deploy
+def slibDemo = new deploy(this)
 
 pipeline {
   agent any
@@ -17,7 +17,7 @@ pipeline {
       steps {
         script {
           println("Current commit id is: \n" + env.commit)
-          println("Current commit log is: \n" + com.org.deploy.myData(env.commit))
+          deploy.myData env.commit
         }      
       }
     }
