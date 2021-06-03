@@ -11,7 +11,7 @@ pipeline {
       steps {
         script {
           def commit = env.GIT_COMMIT
-          deploy.myData(commit)
+          println(deploy.myData(commit))
         }      
       }
     }
