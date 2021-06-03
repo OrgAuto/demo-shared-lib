@@ -3,6 +3,10 @@ import com.org.deploy
 
 pipeline {
   agent any
+  environment {
+            // Get the commit log
+            COMMIT_LOG = "${com.org.deploy.myData}"
+        }
   stages {
     stage ("Test Shared Library"){
       steps{
@@ -13,8 +17,7 @@ pipeline {
       steps {
         script {
           def commit = env.GIT_COMMIT
-          def dp = new com.org.deploy()
-          println(dp.myData(commit))
+          println(env.COMMIT_LOG(commit))
         }      
       }
     }
