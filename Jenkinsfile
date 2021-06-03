@@ -5,7 +5,7 @@ pipeline {
   agent any
   environment {
             // Get the commit log
-            commit = env.GIT_COMMIT
+            commit = "${env.GIT_COMMIT}"
             COMMIT_LOG = "${com.org.deploy.myData(commit)}"
         }
   stages {
