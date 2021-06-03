@@ -15,7 +15,7 @@ pipeline {
       steps {
         script {
           println("Current commit id is: \n" + env.commit)
-          deploy.myData(env.commit)
+          println(deploy.myData(env.commit))
         }      
       }
     }
