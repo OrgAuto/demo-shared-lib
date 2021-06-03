@@ -6,7 +6,7 @@ pipeline {
   environment {
             // Get the commit log
             commit = "${env.GIT_COMMIT}"
-            // COMMIT_LOG = "${com.org.deploy.myData(commit)}"
+            COMMIT_LOG = "${com.org.deploy.myData}"
         }
   stages {
     stage ("Test Shared Library"){
@@ -17,8 +17,8 @@ pipeline {
     stage ("Test Shared Lib Class"){
       steps {
         script {
-          //def commit = env.GIT_COMMIT
           println("Current commit id is: \n" + env.commit)
+          println("Current commit log is: \n" + env.COMMIT_LOG(env.commit))
         }      
       }
     }
