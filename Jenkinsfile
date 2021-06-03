@@ -7,5 +7,11 @@ pipeline {
         welcome("Priyabrata Mohanty")
       }
     }
+    stage ("Test Shared Lib Class"){
+      script {
+        def commit = ${env.GIT_COMMIT}
+        deploy.deploy.myData("${commit}")
+      }
+    }
   }
 }
