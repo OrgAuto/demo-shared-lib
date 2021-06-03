@@ -8,9 +8,11 @@ pipeline {
       }
     }
     stage ("Test Shared Lib Class"){
-      script {
-        def commit = ${env.GIT_COMMIT}
-        deploy.deploy.myData("${commit}")
+      steps {
+        script {
+          def commit = ${env.GIT_COMMIT}
+          deploy.deploy.myData("${commit}")
+        }      
       }
     }
   }
