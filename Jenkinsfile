@@ -3,7 +3,8 @@
 pipeline {
   agent any
   environment {
-            commit = "${env.GIT_COMMIT}"
+            def commit = "${env.GIT_COMMIT}"
+            def workspace = "${WORKSPACE}"
         }
   stages {
     stage ("Test Shared Library"){
