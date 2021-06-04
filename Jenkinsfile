@@ -22,11 +22,11 @@ pipeline {
       }
     }
   }
-  post {
+  //post {
 
-        always {        
-            cleanWs disableDeferredWipeout: true, deleteDirs: true
-        }
+    //    always {        
+      //      cleanWs disableDeferredWipeout: true, deleteDirs: true
+        //}
 
-    }
+    //}
 }
