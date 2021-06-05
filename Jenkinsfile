@@ -1,6 +1,6 @@
 @Library('slibDemo@') 
-import org.local.deploy
-import org.local.getToken
+import org.local.Test
+import org.local.Get
 def myClass = new Test()
 def myClass1 = new Get()
 
