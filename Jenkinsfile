@@ -1,4 +1,4 @@
-@Library('slibDemo@') 
+@Library('slibDemo') _
 import org.local.Test
 import org.local.Get
 def myClass = new Test()
