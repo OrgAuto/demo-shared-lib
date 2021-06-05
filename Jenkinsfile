@@ -1,7 +1,4 @@
 @Library('slibDemo') _
-import org.local.deploy
-import org.local.getToken
-
 
 pipeline {
   agent any
@@ -12,15 +9,7 @@ pipeline {
   stages {
     stage ("Test Shared Library"){
       steps{
-          // welcome()
-          script {
-            def myClass = new deploy()
-            def myClass1 = new getToken()
-            myClass.myData(env.commit)
-            myClass.myList(env.commit)
-            myClass1.token("Prince")
-          }
-
+          welcome()
       }
     }
     stage ("Test Shared Lib Function"){
