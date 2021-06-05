@@ -1,7 +1,7 @@
 @Library('slibDemo@') 
 import org.local.deploy
 import org.local.getToken
-// def myClass = new deploy()
+def myClass = new deploy()
 def myClass1 = new getToken()
 
 pipeline {
@@ -14,10 +14,11 @@ pipeline {
     stage ("Test Shared Library"){
       steps{
           welcome()
-          myClass1.token("Prince")
-          // println(myClass.myData(env.commit))
-          // println(myClass.myList(env.commit))
-            
+          script {
+            println(myClass.myData(env.commit))
+            println(myClass.myList(env.commit))
+            println(myClass1.token("Prince"))
+          }
 
       }
     }
