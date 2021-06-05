@@ -12,8 +12,8 @@ pipeline {
       steps{
           welcome()
           script {
-            def myClass = new myData()
-            def myClass2 = new myData()
+            def org.local.deploy.myClass = new myData()
+            def org.local.deploy.myClass2 = new myData()
             myClass(env.commit)
             myClass2.(env.commit)
           }
