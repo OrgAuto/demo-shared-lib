@@ -12,8 +12,8 @@ pipeline {
       steps{
           welcome()
           script {
-            myClass.myData(env.commit)
-            myClass.myList(env.commit)
+            println(myClass.myData(env.commit))
+            println(myClass.myList(env.commit))
           }
 
       }
