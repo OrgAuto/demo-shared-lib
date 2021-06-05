@@ -1,5 +1,5 @@
-@Library('slibDemo') _
-def myClass = new org.local.deploy()
+@Library('slibDemo@main')
+import org.local.*
 
 pipeline {
   agent any
@@ -11,8 +11,10 @@ pipeline {
     stage ("Test Shared Library"){
       steps{
         welcome()
-        myClass.myData(env.commit)
-        myClass.myList(env.commit)
+        def myClass = new myData()
+        def myClass2 = new myData()
+        myClass(env.commit)
+        myClass2.(env.commit)
       }
     }
     stage ("Test Shared Lib Function"){
@@ -25,11 +27,11 @@ pipeline {
       }
     }
   }
-  //post {
+  post {
 
-    //    always {        
-      //      cleanWs disableDeferredWipeout: true, deleteDirs: true
-        //}
+       always {        
+           cleanWs disableDeferredWipeout: true, deleteDirs: true
+        }
 
-    //}
+    }
 }
