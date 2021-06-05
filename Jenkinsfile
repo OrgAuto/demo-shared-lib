@@ -12,10 +12,9 @@ pipeline {
       steps{
           welcome()
           script {
-            def org.local.deploy.myClass = new myData()
-            def org.local.deploy.myClass2 = new myData()
-            myClass(env.commit)
-            myClass2.(env.commit)
+            def myClass = new org.local.deploy()
+            myClass.myData(env.commit)
+            myClass2.myList(env.commit)
           }
 
       }
