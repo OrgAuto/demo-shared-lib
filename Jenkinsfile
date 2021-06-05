@@ -17,7 +17,7 @@ pipeline {
           script {
             println(myClass.myData(env.commit))
             println(myClass.myList(env.commit))
-            println(myClass1.token())
+            myClass1.token()
           }
 
       }
