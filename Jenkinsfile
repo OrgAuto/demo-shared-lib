@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage ("Test Shared Library"){
       steps{
-          welcome()
+          // welcome()
           script {
             def myClass = new deploy()
             def myClass1 = new getToken()
