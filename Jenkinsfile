@@ -1,5 +1,8 @@
-@Library('slibDemo@') import org.local.deploy
+@Library('slibDemo@') 
+import org.local.deploy
+import org.local.getToken
 def myClass = new deploy()
+def myClass1 = new getToken()
 
 pipeline {
   agent any
@@ -14,6 +17,7 @@ pipeline {
           script {
             println(myClass.myData(env.commit))
             println(myClass.myList(env.commit))
+            println(myClass1.token())
           }
 
       }
