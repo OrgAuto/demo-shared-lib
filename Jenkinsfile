@@ -1,5 +1,5 @@
 @Library('slibDemo@') import org.local.deploy
-def myClass = new Test()
+def myClass = new deploy()
 
 pipeline {
   agent any
