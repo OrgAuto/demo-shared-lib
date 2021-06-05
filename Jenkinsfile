@@ -1,4 +1,5 @@
 @Library('slibDemo') _
+def myClass = new org.local.deploy()
 
 pipeline {
   agent any
@@ -10,6 +11,8 @@ pipeline {
     stage ("Test Shared Library"){
       steps{
         welcome()
+        myClass.myData(env.commit)
+        myClass.myList(env.commit)
       }
     }
     stage ("Test Shared Lib Function"){
