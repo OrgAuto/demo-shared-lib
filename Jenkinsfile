@@ -1,8 +1,8 @@
 @Library('slibDemo@') 
 import org.local.deploy
 import org.local.getToken
-def myClass = new deploy()
-def myClass1 = new getToken()
+def myClass = new deploy.Test()
+def myClass1 = new getToken.Get()
 
 pipeline {
   agent any
