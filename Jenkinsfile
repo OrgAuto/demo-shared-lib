@@ -1,5 +1,5 @@
-@Library('slibDemo@main')
-import org.local.*
+@Library('slibDemo@') import org.local.deploy
+def myClass = new deploy()
 
 pipeline {
   agent any
@@ -12,9 +12,8 @@ pipeline {
       steps{
           welcome()
           script {
-            def myClass = new org.local.deploy()
             myClass.myData(env.commit)
-            myClass2.myList(env.commit)
+            myClass.myList(env.commit)
           }
 
       }
