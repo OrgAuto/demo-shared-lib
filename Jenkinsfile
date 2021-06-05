@@ -10,11 +10,14 @@ pipeline {
   stages {
     stage ("Test Shared Library"){
       steps{
-        welcome()
-        def myClass = new myData()
-        def myClass2 = new myData()
-        myClass(env.commit)
-        myClass2.(env.commit)
+          welcome()
+          script {
+            def myClass = new myData()
+            def myClass2 = new myData()
+            myClass(env.commit)
+            myClass2.(env.commit)
+          }
+
       }
     }
     stage ("Test Shared Lib Function"){
