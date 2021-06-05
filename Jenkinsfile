@@ -1,8 +1,7 @@
 @Library('slibDemo') _
-import org.local.Test
-import org.local.Get
-def myClass = new Test()
-def myClass1 = new Get()
+import org.local.deploy
+import org.local.getToken
+
 
 pipeline {
   agent any
@@ -15,6 +14,8 @@ pipeline {
       steps{
           welcome()
           script {
+            def myClass = new deploy()
+            def myClass1 = new getToken()
             println(myClass.myData(env.commit))
             println(myClass.myList(env.commit))
             println(myClass1.token("Prince"))
