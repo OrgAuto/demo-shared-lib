@@ -16,9 +16,9 @@ pipeline {
           script {
             def myClass = new deploy()
             def myClass1 = new getToken()
-            println(myClass.myData(env.commit))
-            println(myClass.myList(env.commit))
-            println(myClass1.token("Prince"))
+            myClass.myData(env.commit)
+            myClass.myList(env.commit)
+            myClass1.token("Prince")
           }
 
       }
