@@ -14,11 +14,10 @@ pipeline {
     stage ("Test Shared Library"){
       steps{
           welcome()
-          script {
-            // println(myClass.myData(env.commit))
-            // println(myClass.myList(env.commit))
-            myClass1.token("Prince")
-          }
+          myClass1.token("Prince")
+          // println(myClass.myData(env.commit))
+          // println(myClass.myList(env.commit))
+            
 
       }
     }
