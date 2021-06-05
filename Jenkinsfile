@@ -1,7 +1,7 @@
 @Library('slibDemo@') 
 import org.local.deploy
 import org.local.getToken
-def myClass = new deploy()
+// def myClass = new deploy()
 def myClass1 = new getToken()
 
 pipeline {
@@ -15,8 +15,8 @@ pipeline {
       steps{
           welcome()
           script {
-            println(myClass.myData(env.commit))
-            println(myClass.myList(env.commit))
+            // println(myClass.myData(env.commit))
+            // println(myClass.myList(env.commit))
             myClass1.token("Prince")
           }
 
