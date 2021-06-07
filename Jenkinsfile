@@ -17,27 +17,21 @@ pipeline {
       steps {
         script {
           String commit = deploy.GetCommit()
-          println(commit)
           def repo_dir = deploy.GetCRepoDir()
-          println(repo_dir)
-          def file_list = deploy.GetDeltaFiles(commit)
-          println("Delta list")
-          println(deploy.GetDeltaFiles(commit))
-          println("Deployable files list")
-          println(deploy.GetDeployScripts(file_list))
-          def deploy_list = deploy.GetDeployScripts(file_list)
+          def delta_file_list = deploy.GetDeltaFiles(commit)
+          def deploy_list = deploy.GetDeployScripts(delta_file_list)
           for (script in deploy_list) {
-            println("File Extension is: ")
-            println(deploy.GetExtension(script))
-            println(deploy.GetBaseName(script, deploy.GetExtension(script)))
+            def extension = deploy.GetExtension(script)
+            def script_basename = deploy.GetBaseName(script, extension)
+            println(deploy.GetScriptContent(script, repo_dir))
           }
         }      
       }
     }
   }
-  // post {
-  //      always {        
-  //          cleanWs disableDeferredWipeout: true, deleteDirs: true
-  //       }
-  //   }
+  post {
+       always {        
+           cleanWs disableDeferredWipeout: true, deleteDirs: true
+        }
+    }
 }
