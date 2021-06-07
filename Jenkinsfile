@@ -15,9 +15,13 @@ pipeline {
     stage ("Test Shared Lib Function"){
       steps {
         script {
-          println("Current commit id is: \n" + env.commit)
-          String log = deploy.myData(env.commit)
-          println(log)
+          String commit = deploy.GetCommit()
+          println(commit)
+          def repo_dir = deploy.GetCRepoDir()
+          println(repo_dir)
+          def file_list = deploy.GetDeltaFiles(commit)
+          println(deploy.GetDeltaFiles(commit))
+          println(deploy.GetDeployScripts(file_list))
         }      
       }
     }
