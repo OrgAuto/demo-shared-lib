@@ -25,6 +25,10 @@ pipeline {
           println(deploy.GetDeltaFiles(commit))
           println("Deployable files list")
           println(deploy.GetDeployScripts(file_list))
+          def deploy_list = deploy.GetDeployScripts(file_list)
+          for (script in deploy_list) {
+            GetExtension(script)
+          }
         }      
       }
     }
