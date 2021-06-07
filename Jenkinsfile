@@ -23,6 +23,7 @@ pipeline {
           for (script in deploy_list) {
             def extension = deploy.GetExtension(script)
             def script_basename = deploy.GetBaseName(script, extension)
+            println(script)
             println(deploy.GetScriptContent(script, repo_dir))
           }
         }      
