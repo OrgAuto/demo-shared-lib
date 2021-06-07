@@ -27,7 +27,7 @@ pipeline {
           println(deploy.GetDeployScripts(file_list))
           def deploy_list = deploy.GetDeployScripts(file_list)
           for (script in deploy_list) {
-            GetExtension(script)
+            deploy.GetExtension(script)
           }
         }      
       }
