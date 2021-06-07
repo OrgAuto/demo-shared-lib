@@ -8,9 +8,10 @@ pipeline {
         }
   stages {
     stage ("Test Shared Library"){
-      // steps{
-      //     welcome()
-      // }
+      steps{
+        println("Stage 1")
+          // welcome()
+      }
     }
     stage ("Test Shared Lib Function"){
       steps {
