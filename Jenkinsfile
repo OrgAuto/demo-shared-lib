@@ -29,6 +29,7 @@ pipeline {
           for (script in deploy_list) {
             println("File Extension is: ")
             println(deploy.GetExtension(script))
+            println(deploy.GetBaseName(script, deploy.GetExtension(script)))
           }
         }      
       }
