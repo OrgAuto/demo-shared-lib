@@ -21,7 +21,9 @@ pipeline {
           def repo_dir = deploy.GetCRepoDir()
           println(repo_dir)
           def file_list = deploy.GetDeltaFiles(commit)
+          println("Delta list")
           println(deploy.GetDeltaFiles(commit))
+          println("Deployable files list")
           println(deploy.GetDeployScripts(file_list))
         }      
       }
