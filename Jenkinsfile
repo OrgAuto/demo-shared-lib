@@ -19,12 +19,13 @@ pipeline {
           String commit = deploy.GetCommit()
           def repo_dir = deploy.GetCRepoDir()
           def delta_file_list = deploy.GetDeltaFiles(commit)
-          def deploy_list = deploy.GetDeployScripts(delta_file_list)
-          for (script in deploy_list) {
-            def extension = deploy.GetExtension(script)
-            def script_basename = deploy.GetBaseName(script, extension)
-            println(script)
-            println(deploy.GetScriptContent(script, repo_dir))
+          println(delta_file_list)
+          // def deploy_list = deploy.GetDeployScripts(delta_file_list)
+          // for (script in deploy_list) {
+          //   def extension = deploy.GetExtension(script)
+          //   def script_basename = deploy.GetBaseName(script, extension)
+          //   println(script)
+          //   println(deploy.GetScriptContent(script, repo_dir))
           }
         }      
       }
